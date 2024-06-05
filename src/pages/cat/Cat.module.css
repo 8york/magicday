@@ -1,0 +1,16 @@
+.catPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* .catPage nav {
+  text-align: center;
+} */
+.img {
+  height: 400px;
+  width: 550px;
+  background-image: url("https://placekitten.com/200/300");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

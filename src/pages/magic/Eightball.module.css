@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container h2 {
+  color: black;
+  margin-top: 0;
+}
+.ball {
+  height: 300px;
+  width: 300px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+  border: 0.5px rgb(191, 15, 126) solid;
+  box-shadow: 30px 15px 100px rgb(191, 15, 126);
+}
+
+.circle {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.shake {
+  animation: shake 0.5s infinite linear;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(8px);
+  }
+  20% {
+    transform: translateY(-5px);
+  }
+  40% {
+    transform: translateY(8px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}

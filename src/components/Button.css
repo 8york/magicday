@@ -1,0 +1,25 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+}
+
+.human {
+  background-color: violet;
+  border: 1px solid violet;
+}
+
+.cat {
+  background-color: green;
+  border: 1px solid green;
+}
+
+button {
+  width: 5em;
+  padding: 1em 1em;
+  box-shadow: 2px 4px 5px grey;
+  border-radius: 50%;
+  color: bisque;
+  font-size: 22px;
+}
