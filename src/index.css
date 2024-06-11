@@ -1,6 +1,6 @@
 :root {
   --primary: #bc4123;
-  --secondary: #2b3452;
+  /* --secondary: #2b3452; */
 }
 body {
   margin: 0;
@@ -13,7 +13,7 @@ body {
   font-family: "Silkscreen", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background-color: rgb(35, 10, 98);
+  background-color: rgb(35, 10, 95);
 }
 
 code {
@@ -26,7 +26,6 @@ nav {
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  /* color: antiquewhite; */
 }
 
 header nav h1 {
@@ -36,7 +35,7 @@ header nav h1 {
   font-family: "Bungee Shade", sans-serif;
   font-weight: 800;
   font-size: 3em;
-  color: rgb(214, 36, 155);
+  color: rgb(255, 0, 174);
 }
 
 nav a {
@@ -44,7 +43,7 @@ nav a {
   padding: 12px;
   border-radius: 4px;
   margin: 0 auto;
-  color: rgb(77, 223, 208);
+  color: rgb(77, 222, 211);
   font-size: 1.5em;
   font-weight: 400;
 }

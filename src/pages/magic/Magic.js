@@ -32,9 +32,9 @@ export default function Magic() {
     "mewon meow.",
     "meow meow meow.",
     "meow meow meow meow.",
-    // "You may rely on it.",
-    // "As I see it, yes.",
-    // "Most likely.",
+    "mewo purrpurr",
+    "meaowwww scratch",
+    "purrpurrr",
     // "Outlook good.",
     // "Signs point to yes.",
     // "Yes.",
@@ -54,13 +54,14 @@ export default function Magic() {
   const [asked, setAsked] = useState(false);
   const [answer, setAnswer] = useState("");
   const [shaking, setShaking] = useState(false);
+  const [newQuestion, setNewQuestion] = useState(false);
   const [useCatAnswer, setUseCatAnswer] = useState(false);
 
   const showQuestion = (e) => {
     if (e.target && e.target.value) {
       setQuery(e.target.value);
       setAsked(true);
-      // setSubmited(true);
+      setNewQuestion(true);
     }
   };
 
@@ -72,14 +73,15 @@ export default function Magic() {
   }, []);
 
   const getRandom = () => {
-    // if (submited) {
-    const selectedAnswer = useCatAnswer ? catAnswers : answers;
-    const randomIndx = Math.floor(Math.random() * selectedAnswer.length);
-    const randomAnswer = selectedAnswer[randomIndx];
-    setAnswer(randomAnswer);
-    // console.log(randomAnswer);
-
-    setQuery("");
+    if (asked && newQuestion) {
+      const selectedAnswer = useCatAnswer ? catAnswers : answers;
+      const randomIndx = Math.floor(Math.random() * selectedAnswer.length);
+      const randomAnswer = selectedAnswer[randomIndx];
+      setAnswer(randomAnswer);
+      // console.log(randomAnswer);
+      setNewQuestion(false);
+      setQuery("");
+    }
   };
 
   const handleQuestionSubmit = () => {
@@ -106,7 +108,10 @@ export default function Magic() {
         onSubmit={handleQuestionSubmit}
         shaking={shaking}
       />
-      {asked && <Answer answer={answer} />}
+      {asked && (!asked || !newQuestion) && (
+        <Answer answer={answer || "place a question"} />
+      )}
     </main>
   );
 }
+// }

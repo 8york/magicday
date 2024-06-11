@@ -13,8 +13,8 @@
   background-color: black;
   border-radius: 50%;
   position: relative;
-  border: 0.5px rgb(191, 15, 126) solid;
-  box-shadow: 30px 15px 100px rgb(191, 15, 126);
+  border: 0.5px #bc4123 solid;
+  box-shadow: 20px 1px 70px #bc4123;
 }
 
 .circle {

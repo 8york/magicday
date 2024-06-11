@@ -3,7 +3,7 @@ import styles from "./Home.module.css";
 
 export default function Home() {
   const hTwo = "who do you believe";
-  const options = ["cat", "human", "sicence"];
+  const options = ["cat", "human"];
 
   return (
     <div className={styles.home}>
