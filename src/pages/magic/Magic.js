@@ -104,7 +104,7 @@ export default function Magic() {
       />
       <Question
         showQuestion={showQuestion}
-        value={query}
+        query={query}
         onSubmit={handleQuestionSubmit}
         shaking={shaking}
       />
