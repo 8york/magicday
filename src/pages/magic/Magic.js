@@ -87,12 +87,14 @@ export default function Magic() {
   const handleQuestionSubmit = () => {
     setAsked(true);
     setShaking(true);
+    // setNewQuestion(false);
+    // setShaking(false);
 
     setTimeout(() => {
       getRandom();
       setShaking(false);
     }, 500);
-  }; // };
+  };
 
   return (
     <main>

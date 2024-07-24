@@ -5,7 +5,7 @@ export default function RootLayout() {
     <div className="root-layout">
       <header>
         <nav>
-          <h1>What is it going to be today</h1>
+          <h1>HaloDaily</h1>
           <NavLink to="/">Home</NavLink>
         </nav>
       </header>

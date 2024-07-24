@@ -6,7 +6,7 @@ export default function CatStory() {
   );
   return (
     <div className="cats">
-      <h2>today</h2>
+      <h2>purring wisdomzzz</h2>
       {isPending && <p>Loading...</p>}{" "}
       {/* Display a loading message while fetching data */}
       {error && <p>Error: {error.message}</p>}{" "}
