@@ -54,14 +54,13 @@ export default function Magic() {
   const [asked, setAsked] = useState(false);
   const [answer, setAnswer] = useState("");
   const [shaking, setShaking] = useState(false);
-  const [newQuestion, setNewQuestion] = useState(false);
+  // const [newQuestion, setNewQuestion] = useState(false);
   const [useCatAnswer, setUseCatAnswer] = useState(false);
 
   const showQuestion = (e) => {
     if (e.target && e.target.value) {
       setQuery(e.target.value);
       setAsked(true);
-      setNewQuestion(true);
     }
   };
 
@@ -72,35 +71,34 @@ export default function Magic() {
     }
   }, []);
 
+  const handleQuestionSubmit = () => {
+    setQuery("");
+    setAsked(false);
+  };
+
   const getRandom = () => {
-    if (asked && newQuestion) {
+    if (asked && query) {
       const selectedAnswer = useCatAnswer ? catAnswers : answers;
       const randomIndx = Math.floor(Math.random() * selectedAnswer.length);
       const randomAnswer = selectedAnswer[randomIndx];
       setAnswer(randomAnswer);
-      // console.log(randomAnswer);
-      setNewQuestion(false);
       setQuery("");
     }
   };
 
-  const handleQuestionSubmit = () => {
-    setAsked(true);
-    setShaking(true);
-
-    setTimeout(() => {
+  useEffect(() => {
+    if (asked) {
+      handleQuestionSubmit();
       getRandom();
-      setShaking(false);
-    }, 500);
-  }; // };
-
+      setAsked(false);
+    }
+  }, []);
   return (
     <main>
       <Eightball
         getRandom={getRandom}
         shaking={shaking}
         setShaking={setShaking}
-        // useCatAnswer={useCatAnswer}
       />
       <Question
         showQuestion={showQuestion}
@@ -108,10 +106,7 @@ export default function Magic() {
         onSubmit={handleQuestionSubmit}
         shaking={shaking}
       />
-      {asked && (!asked || !newQuestion) && (
-        <Answer answer={answer || "place a question"} />
-      )}
+      {asked && <Answer answer={answer} />}
     </main>
   );
 }
-// }
