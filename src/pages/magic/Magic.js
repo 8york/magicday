@@ -29,9 +29,9 @@ export default function Magic() {
 
   const catAnswers = [
     "meow",
-    "mewon meow.",
-    "meow meow meow.",
-    "meow meow meow meow.",
+    "mewon meow",
+    "meow meow meow",
+    "meow meow meow meow",
     "mewo purrpurr",
     "meaowwww scratch",
     "purrpurrr",
@@ -55,16 +55,13 @@ export default function Magic() {
   let [answer, setAnswer] = useState("");
   const [answered, setAnswered] = useState(false);
   const [shaking, setShaking] = useState(false);
-  // const [askNew, setAskNew] = useState(true);
   const [useCatAnswer, setUseCatAnswer] = useState(false);
 
   const showQuestion = (e) => {
-    if (e.target.value) {
-      const enquery = e.target.value;
-      setQuery(enquery);
-      setAsked(true);
-      setAnswered(false);
-    }
+    const enquery = e.target.value;
+    setQuery(enquery);
+    setAsked(true);
+    setAnswered(false);
   };
 
   // initially checks url path
@@ -87,13 +84,14 @@ export default function Magic() {
       const randomIndx = Math.floor(Math.random() * selectedAnswer.length);
       const randomAnswer = selectedAnswer[randomIndx];
       setAnswer(randomAnswer);
-      console.log(answer);
+      setAnswered(true);
     }
   };
 
   useEffect(() => {
     if (answered) {
       setQuery("");
+      setAsked(false);
     }
   }, [asked, answered]);
   return (
@@ -109,7 +107,7 @@ export default function Magic() {
         onSubmit={handleQuestionSubmit}
         shaking={shaking}
       />
-      {asked && <Answer answer={answer} />}
+      {answered && <Answer answer={answer} />}
     </main>
   );
 }
