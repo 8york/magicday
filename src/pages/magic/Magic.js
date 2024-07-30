@@ -52,15 +52,18 @@ export default function Magic() {
 
   const [query, setQuery] = useState("");
   const [asked, setAsked] = useState(false);
-  const [answer, setAnswer] = useState("");
+  let [answer, setAnswer] = useState("");
+  const [answered, setAnswered] = useState(false);
   const [shaking, setShaking] = useState(false);
-  // const [newQuestion, setNewQuestion] = useState(false);
+  // const [askNew, setAskNew] = useState(true);
   const [useCatAnswer, setUseCatAnswer] = useState(false);
 
   const showQuestion = (e) => {
-    if (e.target && e.target.value) {
-      setQuery(e.target.value);
+    if (e.target.value) {
+      const enquery = e.target.value;
+      setQuery(enquery);
       setAsked(true);
+      setAnswered(false);
     }
   };
 
@@ -71,28 +74,28 @@ export default function Magic() {
     }
   }, []);
 
-  const handleQuestionSubmit = () => {
-    setQuery("");
-    setAsked(false);
+  const handleQuestionSubmit = (e) => {
+    e.preventDefault();
+    if (asked && !answered) {
+      getRandom();
+    }
   };
 
   const getRandom = () => {
-    if (asked && query) {
+    if (asked) {
       const selectedAnswer = useCatAnswer ? catAnswers : answers;
       const randomIndx = Math.floor(Math.random() * selectedAnswer.length);
       const randomAnswer = selectedAnswer[randomIndx];
       setAnswer(randomAnswer);
-      setQuery("");
+      console.log(answer);
     }
   };
 
   useEffect(() => {
-    if (asked) {
-      handleQuestionSubmit();
-      getRandom();
-      setAsked(false);
+    if (answered) {
+      setQuery("");
     }
-  }, []);
+  }, [asked, answered]);
   return (
     <main>
       <Eightball

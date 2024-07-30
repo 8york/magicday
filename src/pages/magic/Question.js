@@ -11,7 +11,7 @@ export default function Question({ showQuestion, query, onSubmit }) {
     >
       <input
         type="text"
-        placeholder="ask it and click on magic 8"
+        placeholder="ask it"
         onChange={showQuestion}
         value={query}
       />
