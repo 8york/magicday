@@ -35,7 +35,7 @@ export default function Magic() {
     "mewo purrpurr",
     "meaowwww scratch",
     "purrpurrr",
-    // "Outlook good.",
+    "feed the cat first",
     // "Signs point to yes.",
     // "Yes.",
     // "Reply hazy, try again.",
@@ -52,7 +52,7 @@ export default function Magic() {
 
   const [query, setQuery] = useState("");
   const [asked, setAsked] = useState(false);
-  let [answer, setAnswer] = useState("");
+  const [answer, setAnswer] = useState("");
   const [answered, setAnswered] = useState(false);
   const [shaking, setShaking] = useState(false);
   const [useCatAnswer, setUseCatAnswer] = useState(false);
