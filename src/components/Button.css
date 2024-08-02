@@ -15,6 +15,18 @@
   border: 1px solid green;
 }
 
+.dinner {
+  background-color: green;
+}
+
+.Kids {
+  background-color: violet;
+}
+
+.chores {
+  background-color: turquoise;
+}
+
 button {
   width: 5em;
   padding: 1em 1em;

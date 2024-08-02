@@ -16,6 +16,8 @@ import CatStory from "./pages/cat/CatStory";
 import Person from "./pages/person/Person";
 import PersonStory from "./pages/person/PersonStory";
 import Magic from "./pages/magic/Magic";
+import Ask from "./pages/ask/Ask";
+import Oracle from "./pages/oracle/Oracle";
 
 //styles
 import "./App.css";
@@ -26,6 +28,9 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
 
+      <Route path="/ask" element={<Ask />} />
+
+      <Route path="oracle" element={<Oracle />} />
       <Route path="/cat" element={<CatLayout />}>
         <Route index element={<Cat />} />
         <Route path="catstory" element={<CatStory />} />

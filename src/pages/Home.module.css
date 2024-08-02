@@ -1,3 +1,6 @@
-h2 {
+li {
   text-align: center;
+  color: aqua;
+  font-size: 2em;
+  list-style-type: none;
 }
